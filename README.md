@@ -2,6 +2,16 @@
 Due November 9
 In your textbook, Building Java Programs, 5th Edition, on page 1027 (1026 eBook) of Chapter 16 please do Programming Project #3. The four files you need to start with are available under the assignment in Module Chapter 16.
 
+The implementation of several methods is (or can be) the
+same between our ArrayList and LinkedList . Write a
+common abstract superclass called AbstractList that
+implements the common behavior and is extended by both
+ArrayList and LinkedList . Factor out the common code from
+the two list classes into this abstract superclass so that no
+code duplication occurs between the two. Use iterators
+wherever possible in the abstract code to ensure that the
+implementation is efficient for both types of lists.
+
 As a group project, the development work must be divided up into parts that can be done by individuals in your group, by group agreement. Your job will be to meet, both in class and on Canvas, via Canvas Mail, to parcel out the work and coordinate your efforts toward completing the project program.
 
 If the group leader currently assigned is not willing to serve, you must choose a team leader by group consensus. This person will have the job of coordinating the efforts of the team members, and assembling the completed project for submission. The output of the project will be a ZIP archive, similar to a homework assignment, that is submitted by the team leader. It must contain all the Java source files needed for the project, and a word document describing the process of completing the project.
