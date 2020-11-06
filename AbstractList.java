@@ -1,7 +1,7 @@
 import java.util.*;
 
 public abstract class AbstractList<E> implements List<E> {
-    private int size; // current number of elements in the list
+    protected int size; // current number of elements in the list
 
     //returns num of elements in list
     public int size() {
