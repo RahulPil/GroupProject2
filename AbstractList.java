@@ -15,7 +15,19 @@ public abstract class AbstractList<E> implements List<E> {
     public abstract void checkIndex(int index);
 
     //returns a string representation of the list
-    public abstract String toString();
+    public String toString() {
+        if (this.isEmpty()) return "[]";
+        else {
+            String str = "[";
+            Iterator<E> itr = this.iterator();
+            str += itr.next();
+            while (itr.hasNext()) {
+                str += "," + itr.next();
+            }
+            str += "]";
+            return str;
+        }
+    }
 
     //returns the index of the first occurrence of the given value
     //returns -1 if not found
