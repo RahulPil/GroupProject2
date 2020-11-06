@@ -22,10 +22,14 @@ public abstract class AbstractList<E> implements List<E> {
     public abstract int indexOf(E value);
 
     //returns true if the list is empty
-    public abstract boolean isEmpty();
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
     //returns true if the list contains the value
-    public abstract boolean contains(E value);
+    public boolean contains(E value){
+        return indexOf(value) >= 0;
+    }
 
     //appends the value to the end of the list
     public abstract void add(E value);
@@ -35,7 +39,11 @@ public abstract class AbstractList<E> implements List<E> {
     public abstract void add(int index, E value);
 
     //adds the given list to the end of the current list
-    public abstract void addAll(List<E> other);
+    public void addAll(List<E> other) {
+        for (E value : other) {
+            add(value);
+        }
+    }
 
     //removes the value at the given index
     abstract public void remove(int index);
@@ -44,7 +52,13 @@ public abstract class AbstractList<E> implements List<E> {
     abstract public void set(int index, E value);
 
     //empties the list
-    public abstract void clear();
+    public void clear() {
+        Iterator<E> itr = this.iterator();
+        while (itr.hasNext()) {
+            itr.next();
+            itr.remove();
+        }
+    }
 
     //returns an iterator starting at the front of the list
     public abstract Iterator<E> iterator();
