@@ -9,15 +9,7 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     //returns value at given index in list
-    public E get(int index) {
-        checkIndex(index);
-        E value = null;
-        Iterator<E> itr = this.iterator();
-        for (int i = 0; i <= index; i++) {
-           value = itr.next();
-        }
-        return value;
-    };
+    public abstract E get(int index);
 
     //verifies that the index is in bounds of the list
     public abstract void checkIndex(int index);
