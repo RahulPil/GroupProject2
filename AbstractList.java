@@ -20,7 +20,7 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     //verifies that the index is in bounds of the list
-    public abstract void checkIndex(int index);
+    protected abstract void checkIndex(int index);
 
     //returns a string representation of the list
     public String toString() {
@@ -30,7 +30,7 @@ public abstract class AbstractList<E> implements List<E> {
             Iterator<E> itr = this.iterator();
             str += itr.next();
             while (itr.hasNext()) {
-                str += "," + itr.next();
+                str += ", " + itr.next();
             }
             str += "]";
             return str;

@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class ArrayList<E> implements List<E> {
+public class ArrayList<E> extends AbstractList<E> implements List<E> {
     private E[] elementData; // list of values
     private int size;        // current number of elements in the list
 
@@ -34,20 +34,6 @@ public class ArrayList<E> implements List<E> {
     public E get(int index) {
         checkIndex(index);
         return elementData[index];
-    }
-
-    // post: creates a comma-separated, bracketed version of the list
-    public String toString() {
-        if (size == 0) {
-            return "[]";
-        } else {
-            String result = "[" + elementData[0];
-            for (int i = 1; i < size; i++) {
-                result += ", " + elementData[i];
-            }
-            result += "]";
-            return result;
-        }
     }
 
     // post : returns the position of the first occurrence of the given
@@ -146,7 +132,7 @@ public class ArrayList<E> implements List<E> {
 
     // post: throws an IndexOutOfBoundsException if the given index is
     //       not a legal index of the current list
-    private void checkIndex(int index) {
+    protected void checkIndex(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("index: " + index);
         }
