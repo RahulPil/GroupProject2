@@ -11,7 +11,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
     public LinkedList() {
         front = new ListNode<E>(null);
         back = new ListNode<E>(null);
-        clear();
+        front.next = back;
     }
 
     // post: returns the current number of elements in the list
@@ -80,13 +80,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         checkIndex(index);
         ListNode<E> current = nodeAt(index);
         current.data = value;
-    }
-
-    // post: list is empty
-    public void clear() {
-        front.next = back;
-        back.prev = front;
-        size = 0;
     }
 
     // post: returns an iterator for this list
