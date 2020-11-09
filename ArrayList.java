@@ -91,14 +91,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         elementData[index] = value;
     }
 
-    // post: list is empty
-    public void clear() {
-        for (int i = 0; i < size; i++) {
-            elementData[i] = null;
-        }
-        size = 0;
-    }
-
     // post: returns an iterator for this list
     public Iterator<E> iterator() {
         return new ArrayListIterator();
