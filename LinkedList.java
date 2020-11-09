@@ -34,17 +34,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         return -1;
     }
 
-    // post: returns true if list is empty, false otherwise
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    // post: returns true if the given value is contained in the list,
-    //       false otherwise
-    public boolean contains(E value) {
-        return indexOf(value) >= 0;
-    }
-
     // post: appends the given value to the end of the list
     public void add(E value) {
         add(size, value);
