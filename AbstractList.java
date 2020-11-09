@@ -20,7 +20,11 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     //verifies that the index is in bounds of the list
-    protected abstract void checkIndex(int index);
+    protected void checkIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("index: " + index);
+        }
+    }
 
     //returns a string representation of the list
     public String toString() {
@@ -42,9 +46,7 @@ public abstract class AbstractList<E> implements List<E> {
     public abstract int indexOf(E value);
 
     //returns true if the list is empty
-    public boolean isEmpty() {
-        return size == 0;
-    }
+    public boolean isEmpty() { return size == 0; }
 
     //returns true if the list contains the value
     public boolean contains(E value){

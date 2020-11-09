@@ -90,14 +90,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         return current;
     }
 
-    // post: throws an IndexOutOfBoundsException if the given index is
-    //       not a legal index of the current list
-    protected void checkIndex(int index) {
-        if (index < 0 || index >= size()) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        }
-    }
-
     private static class ListNode<E> {
         public E data;         // data stored in this node
         public ListNode<E> next;  // link to next node in the list

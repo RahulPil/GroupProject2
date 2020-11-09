@@ -91,14 +91,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         }
     }
 
-    // post: throws an IndexOutOfBoundsException if the given index is
-    //       not a legal index of the current list
-    protected void checkIndex(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("index: " + index);
-        }
-    }
-
     private class ArrayListIterator implements Iterator<E> {
         private int position;           // current position within the list
         private boolean removeOK;       // whether it's okay to remove now
