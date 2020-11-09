@@ -4,7 +4,6 @@ import java.util.*;
 
 public class ArrayList<E> extends AbstractList<E> implements List<E> {
     private E[] elementData; // list of values
-    private int size;        // current number of elements in the list
 
     public static final int DEFAULT_CAPACITY = 100;
 
