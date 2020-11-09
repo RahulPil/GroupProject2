@@ -99,13 +99,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         size = 0;
     }
 
-    // post: appends all values in the given list to the end of this list
-    public void addAll(List<E> other) {
-        for (E value: other) {
-            add(value);
-        }
-    }
-
     // post: returns an iterator for this list
     public Iterator<E> iterator() {
         return new ArrayListIterator();
