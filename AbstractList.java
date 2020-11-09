@@ -68,10 +68,21 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     //removes the value at the given index
-    abstract public void remove(int index);
+    public void remove(int index){
+      checkIndex(index);
+      Iterator<E> itr = this.iterator();
+      for(int i = 0; i < index; i++){
+         itr.next();
+      }
+      itr.remove();
+   }
+   
 
     //replaces the current value at the index with the given value
-    abstract public void set(int index, E value);
+    public void set(int index, E value){
+        remove(index);     
+        add(index, value);
+    }
 
     //empties the list
     public void clear() {
