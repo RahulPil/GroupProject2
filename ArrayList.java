@@ -24,11 +24,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         this(DEFAULT_CAPACITY);
     }
 
-    // post: returns the current number of elements in the list
-    public int size() {
-        return size;
-    }
-
     // post : returns the position of the first occurrence of the given
     //        value (-1 if not found)
     public int indexOf(E value) {
