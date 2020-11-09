@@ -19,14 +19,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         return size;
     }
 
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: returns the value at the given index in the list
-    public E get(int index) {
-        checkIndex(index);
-        ListNode<E> current = nodeAt(index);
-        return current.data;
-    }
-
     // post : returns the position of the first occurrence of the given
     //        value (-1 if not found)
     public int indexOf(E value) {
