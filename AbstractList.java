@@ -11,12 +11,11 @@ public abstract class AbstractList<E> implements List<E> {
     //returns value at given index in list
     public E get(int index) {
         checkIndex(index);
-        E value = null;
         Iterator<E> itr = this.iterator();
-        for (int i = 0; i <= index; i++) {
-           value = itr.next();
+        for (int i = 0; i < index; i++) {
+           itr.next();
         }
-        return value;
+        return itr.next();
     }
 
     //verifies that the index is in bounds of the list
@@ -43,7 +42,16 @@ public abstract class AbstractList<E> implements List<E> {
 
     //returns the index of the first occurrence of the given value
     //returns -1 if not found
-    public abstract int indexOf(E value);
+    public int indexOf(E value) {
+        Iterator<E> it = iterator();
+        for (int i = 0; i < size; i++) {
+            if (it.next().equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     //returns true if the list is empty
     public boolean isEmpty() { return size == 0; }
@@ -54,7 +62,9 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     //appends the value to the end of the list
-    public abstract void add(E value);
+    public void add(E value) {
+        add(size,value);
+    }
 
     //adds the value at the given index
     //shifts subsequent values right
@@ -71,7 +81,7 @@ public abstract class AbstractList<E> implements List<E> {
     public void remove(int index){
       checkIndex(index);
       Iterator<E> itr = this.iterator();
-      for(int i = 0; i < index; i++){
+      for(int i = 0; i <= index; i++){
          itr.next();
       }
       itr.remove();

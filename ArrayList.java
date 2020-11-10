@@ -23,24 +23,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         this(DEFAULT_CAPACITY);
     }
 
-    // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
-    public int indexOf(E value) {
-        for (int i = 0; i < size; i++) {
-            if (elementData[i].equals(value)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    // post: appends the given value to the end of the list
-    public void add(E value) {
-        ensureCapacity(size + 1);
-        elementData[size] = value;
-        size++;
-    }
-
     // pre : 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
@@ -54,24 +36,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         }
         elementData[index] = value;
         size++;
-    }
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: removes value at the given index, shifting subsequent values left
-    public void remove(int index) {
-        checkIndex(index);
-        for (int i = index; i < size - 1; i++) {
-            elementData[i] = elementData[i + 1];
-        }
-        elementData[size - 1] = null;
-        size--;
-    }
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: replaces the value at the given index with the given value
-    public void set(int index, E value) {
-        checkIndex(index);
-        elementData[index] = value;
     }
 
     // post: returns an iterator for this list
@@ -125,7 +89,11 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
             if (!removeOK) {
                 throw new IllegalStateException();
             }
-            ArrayList.this.remove(position - 1);
+            for (int i = position - 1; i < size - 1; i++) {
+                elementData[i] = elementData[i + 1];
+            }
+            elementData[size - 1] = null;
+            size--;
             position--;
             removeOK = false;
         }

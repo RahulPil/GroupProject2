@@ -13,26 +13,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         front.next = back;
     }
 
-    // post : returns the position of the first occurrence of the given
-    //        value (-1 if not found)
-    public int indexOf(E value) {
-        int index = 0;
-        ListNode<E> current = front.next;
-        while (current !=  back) {
-            if (current.data.equals(value)) {
-                return index;
-            }
-            index++;
-            current = current.next;
-        }
-        return -1;
-    }
-
-    // post: appends the given value to the end of the list
-    public void add(E value) {
-        add(size, value);
-    }
-
     // pre: 0 <= index <= size() (throws IndexOutOfBoundsException if not)
     // post: inserts the given value at the given index, shifting subsequent
     //       values right
@@ -45,24 +25,6 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
         current.next = newNode;
         newNode.next.prev = newNode;
         size++;
-    }
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: removes value at the given index, shifting subsequent values left
-    public void remove(int index) {
-        checkIndex(index);
-        ListNode<E> current = nodeAt(index - 1);
-        current.next = current.next.next;
-        current.next.prev = current;
-        size--;
-    }
-
-    // pre : 0 <= index < size() (throws IndexOutOfBoundsException if not)
-    // post: replaces the value at the given index with the given value
-    public void set(int index, E value) {
-        checkIndex(index);
-        ListNode<E> current = nodeAt(index);
-        current.data = value;
     }
 
     // post: returns an iterator for this list

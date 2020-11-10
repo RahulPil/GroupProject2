@@ -43,13 +43,14 @@ public class ListClient3 {
         System.out.println("List size: " + list.size());
         list.addAll(toAdd);
         System.out.println("List after addAll method call: " + list);
+        System.out.println("Index of 2: " + list.indexOf(2));
         list.clear();
         System.out.println("List after clearing: " + list);
     }
     public static void processStringList(List list, List toAdd) {
         list.add("hello");
         list.add("there");
-        list.add(1,"kenobi");
+        list.add(1,"Kenobi");
         list.add(0,"general");
         System.out.println("List after add method calls: " + list);
         list.remove(2);
@@ -61,6 +62,7 @@ public class ListClient3 {
         System.out.println("List size: " + list.size());
         list.addAll(toAdd);
         System.out.println("List after addAll method call: " + list);
+        System.out.println("Index of 'Kenobi': " + list.indexOf("Kenobi"));
         list.clear();
         System.out.println("List after clearing: " + list);
     }
