@@ -1,7 +1,11 @@
-//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
-//CS 211
-//09-Nov-2020
-//creates abstract list class
+/* 
+ * Group Project #2
+ * Group 6 (Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal)
+ * CS 211
+ * 09-Nov-2020
+ * Creates abstract list class
+ */
+
 import java.util.*;
 
 public abstract class AbstractList<E> implements List<E> {
