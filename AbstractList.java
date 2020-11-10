@@ -43,7 +43,16 @@ public abstract class AbstractList<E> implements List<E> {
 
     //returns the index of the first occurrence of the given value
     //returns -1 if not found
-    public abstract int indexOf(E value);
+   public int indexOf(E value) {
+    	Iterator<E> it = iterator();
+    		for (int i = 0; i < size; i++) {
+    				E val = it.next();
+    				if (val == value) {
+    					return i;
+    				}
+    		}
+    		return -1;
+    }
 
     //returns true if the list is empty
     public boolean isEmpty() { return size == 0; }
