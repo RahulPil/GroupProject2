@@ -1,7 +1,10 @@
-//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
-//CS 211
-//09-Nov-2020
-// Generic interface for a List of E objects.
+/* 
+ * Group Project #2
+ * Group 6 (Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal)
+ * CS 211
+ * 09-Nov-2020
+ * Generic interface for a List of E objects.
+ */
 
 public interface List<E> extends Iterable<E> {
     public int size();
