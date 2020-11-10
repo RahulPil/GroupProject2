@@ -1,3 +1,6 @@
+//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
+//CS 211
+//09-Nov-2020
 // Class LinkedList<E> can be used to store a list of values of type E.
 
 import java.util.*;

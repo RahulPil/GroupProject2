@@ -1,3 +1,7 @@
+//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
+//CS 211
+//09-Nov-2020
+//creates test client for abstract list class
 public class ListClient3 {
     public static void main(String[] args) {
         System.out.println("ARRAY LIST INTEGER TEST");

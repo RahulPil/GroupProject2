@@ -1,3 +1,6 @@
+//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
+//CS 211
+//09-Nov-2020
 // Generic interface for a List of E objects.
 
 public interface List<E> extends Iterable<E> {
