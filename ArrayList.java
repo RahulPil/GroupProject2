@@ -1,7 +1,10 @@
-//Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal
-//CS 211
-//09-Nov-2020
-// Class ArrayList<E> can be used to store a list of values of type E.
+/* 
+ * Group Project #2
+ * Group 6 (Sean Michael, Rahul, Rosie, Anders, Julian, Vatsal)
+ * CS 211
+ * 09-Nov-2020
+ * Class ArrayList<E> can be used to store a list of values of type E.
+ */
 
 import java.util.*;
 
